@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import s from "./main.module.scss";
 import { NewOrder } from "./ui/NewOrders/NewOrder";
-import Modal from "react-modal";
 import RegisterModal from "../../widgets/RegisterModal/RegisterModal.jsx";
 
 export const Main = () => {

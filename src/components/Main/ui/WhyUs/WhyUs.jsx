@@ -58,7 +58,7 @@ export const WhyUs = () => {
             <div className={s.some_card}>
               <div className={s.about_employee}>
                 <div className={s.his_name}>
-                  <img src={user} className={s.employee_img}/>
+                  <img src={user} className={s.employee_img} alt='user'/>
                   <div>
                     <h4>Дияз Баиров</h4>
                     <span>Закройщик</span>
