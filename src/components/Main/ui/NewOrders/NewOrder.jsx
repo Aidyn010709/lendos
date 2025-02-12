@@ -3,6 +3,9 @@ import s from "./neworder.module.scss";
 import photo_product from "../../../../shared/assets/img/photo_product.png";
 
 export const NewOrder = () => {
+  const width = window.innerWidth;
+
+  console.log(width)
   return (
     <div className={s.wrapper}>
       <div className={s.mainCard}>
@@ -40,15 +43,19 @@ export const NewOrder = () => {
         </div>
         <div className={s.feedback}>
           <span className={s.feedback_title}>Комментарий</span>
-          <div className={s.border}></div>
-          <p className={s.feedback_desc}>
-            Клиент просит выделить особое внимание на качество товара.
-          </p>
+          {width <= 768
+              ? null
+              :
+              <>
+                <div className={s.border}></div>
+                <p className={s.feedback_desc}>
+                  Клиент просит выделить особое внимание на качество товара.
+                </p>
+              </>
+          }
         </div>
       </div>
-      <div className={s.otchet_wrap}>
-        <Otchet />
-      </div>
+      <Otchet/>
     </div>
   );
 };

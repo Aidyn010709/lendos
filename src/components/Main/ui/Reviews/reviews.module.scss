@@ -1,13 +1,4 @@
-// .container {
-//   max-width: var(--container-width);
-//   margin: 0 auto;
-// }
-
 .reviewsContainer {
-  // padding: 50px 20px;
-  // background-color: #f8f9fa;
-  // font-family: Montserrat-regular;
-
   & .desc {
     text-align: center;
   }
@@ -19,7 +10,7 @@
     margin-bottom: 12px;
     font-family: var(--font-montserrat-r);
 
-    @media (max-width: 425px) {
+    @media (max-width: 496px) {
       font-size: 20px;
     }
   }
@@ -31,7 +22,7 @@
     font-family: var(--font-montserrat-b);
     margin-bottom: 65px;
 
-    @media (max-width: 425px) {
+    @media (max-width: 496px) {
       font-size: 20px;
     }
   }
@@ -84,7 +75,7 @@
         font-size: 20px;
       }
 
-      @media (max-width: 425px) {
+      @media (max-width: 496px) {
         width: 420px;
         padding: 24px;
       }

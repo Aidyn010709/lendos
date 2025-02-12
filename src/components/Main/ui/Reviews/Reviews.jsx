@@ -4,39 +4,39 @@ import user from "../../../../shared/assets/img/testi-author.png.png";
 const reviews = [
   {
     id: 1,
-    name: "Jacob",
-    company: 'Фабрика "ALLIN"',
-    text: "The staff is very friendly. When we entered the Hostel, we were pleasantly surprised that the photo on the website corresponds to reality. It's clear! We came to International competitions, so silence was very important. €",
+    name: "Тахмина",
+    company: 'Фабрика  “Dalida”',
+    text: "Отличные ребята! С самого начала и до сих пор со мной на связи остаются, тех.поддержка на высоте. Большие молодцы, спасибо вам!",
   },
   {
     id: 2,
-    name: "Emily",
-    company: 'Компания "TravelGo"',
-    text: "The staff is very friendly.When we entered the Hostel, we were pleasantly surprised that the photo on the website corresponds to reality. It's clear! We came to International competitions, so silence was very important. ё",
+    name: "Ильяз",
+    company: 'Фабрика  “Ailin”',
+    text: "Использую TexFlow уже пару месяцев, все отлично работает! Автоматизировали процесс калькуляции зарплаты, и контроля производства заказов.",
   },
   {
     id: 3,
-    name: "Michael",
-    company: 'Корпорация "TechMax"',
-    text: "The staff is very friendly.When we entered the Hostel, we were pleasantly surprised that the photo on the website corresponds to reality. It's clear! We came to International competitions, so silence was very important. ё",
+    name: "Жалил",
+    company: "Фабрика  “Quurchaq”",
+    text: "Провели мне консультацию, объяснили подробно и понятно, все понравилось приобрел систему, первый месяц работы и уже вижу результат. Работа стала идти быстрее и без ошибок. Спасибо",
   },
   {
     id: 4,
-    name: "Michael",
-    company: 'Корпорация "TechMax"',
-    text: "The staff is very friendly.When we entered the Hostel, we were pleasantly surprised that the photo on the website corresponds to reality. It's clear! We came to International competitions, so silence was very important. ё",
+    name: "Тахмина",
+    company: 'Фабрика  “Dalida”',
+    text: "Отличные ребята! С самого начала и до сих пор со мной на связи остаются, тех.поддержка на высоте. Большие молодцы, спасибо вам!",
   },
   {
-    id: 4,
-    name: "Michael",
-    company: 'Корпорация "TechMax"',
-    text: "The staff is very friendly.When we entered the Hostel, we were pleasantly surprised that the photo on the website corresponds to reality. It's clear! We came to International competitions, so silence was very important. ё",
+    id: 5,
+    name: "Ильяз",
+    company: 'Фабрика  “Ailin”',
+    text: "Использую TexFlow уже пару месяцев, все отлично работает! Автоматизировали процесс калькуляции зарплаты, и контроля производства заказов.",
   },
 ];
 
 const Reviews = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <div className={styles.reviewsContainer}>
         <div className={styles.desc}>
           <h2 className={styles.title}>ОТЗЫВЫ</h2>
@@ -45,7 +45,6 @@ const Reviews = () => {
 
         <div className={styles.cards}>
           {reviews.map((review) => (
-            <>
               <div key={review.id} className={styles.reviewCard}>
                 <div className={styles.avatar}>
                   <img src={user} alt="sdcs" className={styles.img} />
@@ -56,7 +55,6 @@ const Reviews = () => {
                 </div>
                 <p className={styles.text}>{review.text}</p>
               </div>
-            </>
           ))}
         </div>
       </div>

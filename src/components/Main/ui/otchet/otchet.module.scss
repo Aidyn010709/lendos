@@ -13,13 +13,25 @@
 
     & .zarplata {
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 500;
       padding-bottom: 22px;
+
+      @media (max-width: 768px) {
+        font-size: 10px;
+      }
+
+      @media (max-width: 496px) {
+        padding-bottom: 15px;
+      }
     }
 
     p {
       font-size: 16px;
       font-weight: 600;
+
+      @media (max-width: 768px) {
+        font-size: 10px;
+      }
     }
   }
 
@@ -73,33 +85,88 @@
 
   @media (max-width: 768px) {
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
     align-items: center;
-
-    // .mainCard,
-    // .order_card {
-    //   flex: 1 1 calc(20% - 10px);
-    // }
+    max-width: 80%;
 
     .btn {
       width: auto;
     }
   }
 
-  @media (max-width: 425px) {
-    flex-direction: column;
-    gap: 15px;
+  @media (max-width: 496px) {
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    padding: 67px 0 0;
+    max-width: 90%;
 
-    .mainCard,
-    .order_card {
+    .buttonContainer {
+      position: absolute;
+      top: 15px;
+      right: 31%;
+      transform: rotate(-7deg);
+    }
+
+    .mainCard {
       flex: 1 1 100%;
-      transform: none;
+      transform: rotate(7deg);
+      padding: 10px;
+
+      & .zarplata {
+        background: #EBEDF0;
+        padding: 4px;
+        border-radius: 16px;
+      }
+
+      & p {
+        padding: 4px;
+      }
+    }
+    .order_card {
+      flex: 1 100%;
+      transform: rotate(-7deg);
+      padding: 10px;
+
+      & .order_icon {
+        width: 17px;
+        height: 17px;
+        position: relative;
+        & > img {
+          width: 13px;
+          height: 13px;
+          position: absolute;
+          top: 3px;
+          left: 3px;
+        }
+      }
+
+      & .status {
+        font-size: 12px;
+      }
+
+      h3 {
+        margin-top: 5px;
+        font-size: 14px;
+      }
     }
 
     .btn {
       width: 100%;
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .buttonContainer {
+      right: 26%;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .buttonContainer {
+      right: 21%;
     }
   }
 }

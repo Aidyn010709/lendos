@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import s from "./main.module.scss";
 import { NewOrder } from "./ui/NewOrders/NewOrder";
 import Modal from "react-modal";
-import complete from "../../shared/assets/img/55 completed.svg";
-
-Modal.setAppElement("#root");
+import RegisterModal from "../../widgets/RegisterModal/RegisterModal.jsx";
 
 export const Main = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,7 +42,7 @@ export const Main = () => {
           <div className={s.subTitle}>швейного производства!</div>
         </div>
 
-        <div>
+        <div className='container'>
           <NewOrder />
         </div>
         <div className={s.btn_wrap}>
@@ -67,89 +65,14 @@ export const Main = () => {
           </button>
         </div>
       </div>
-      <div className={s.modal_wrap}>
-        <Modal
-          isOpen={isModalOpen}
-          onRequestClose={closeModal}
-          contentLabel="Registration Modal"
-          className={s.customModal}
-          overlayClassName={s.customOverlay}
-        >
-          <div className={s.modalContent}>
-            {isSubmitted ? (
-              <div className={s.successMessage}>
-                <img src={complete} alt="complete" className={s.complete_img} />
-                <h2 className={s.complete_title}>Заявка отправлена!</h2>
-                <p className={s.complete_desc}>
-                  Скоро с ваши свяжутся наши консультанты <br /> Спасибо за
-                  обращение!
-                </p>
-                <button className={s.modalSubmit} onClick={closeModal}>
-                  Далее
-                </button>
-              </div>
-            ) : (
-              <>
-                <h2 className={s.modalTitle}>Информация о вас</h2>
-                <form className={s.form} onSubmit={handleSubmit}>
-                  <div>
-                    <label className={s.label}>
-                      ФИО (владельца или естественного лица)
-                    </label>
-                    <input
-                      type="text"
-                      className={s.modalInput}
-                      placeholder="ФИО"
-                      required
-                    />
-                    <label className={s.label}>
-                      Сколько у вас сотрудников на производстве?
-                    </label>
-                    <input
-                      type="text"
-                      className={s.modalInput}
-                      placeholder="Введите количество"
-                      required
-                    />
-                    <div className={s.selectContainer}>
-                      <label className={s.label} htmlFor="accounting-method">
-                        Как вы ведете свой учет?
-                      </label>
-                      <select
-                        id="accounting-method"
-                        className={s.select}
-                        value={selectedOption}
-                        onChange={handleChange}
-                        required
-                      >
-                        <option disabled value="">
-                          Выбрать ответ
-                        </option>
-                        <option value="1C">1C</option>
-                        <option value="МойСклад">МойСклад</option>
-                        <option value="Excel">Excel</option>
-                        <option value="На бумаге">На бумаге</option>
-                        <option value="Другое">Другое</option>
-                      </select>
-                    </div>
-
-                    <label className={s.label}>Введите номер телефона</label>
-                    <input
-                      type="tel"
-                      className={s.modalInput}
-                      placeholder="Введите номер"
-                      required
-                    />
-                  </div>
-                  <button type="submit" className={s.modalSubmit}>
-                    Далее
-                  </button>
-                </form>
-              </>
-            )}
-          </div>
-        </Modal>
-      </div>
+      <RegisterModal
+          isModalOpen={isModalOpen}
+          closeModal={closeModal}
+          isSubmitted={isSubmitted}
+          handleSubmi={handleSubmit}
+          selectedOption={selectedOption}
+          handleChange={handleChange}
+      />
     </div>
   );
 };

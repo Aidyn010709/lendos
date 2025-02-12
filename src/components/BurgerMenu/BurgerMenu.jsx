@@ -1,7 +1,12 @@
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
 import s from "./BurgerMenu.module.scss";
+import RegisterModal from "../../widgets/RegisterModal/RegisterModal.jsx";
 
 export const BurgerMenu = ({ isOpen, setIsOpen }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => {
@@ -15,6 +20,31 @@ export const BurgerMenu = ({ isOpen, setIsOpen }) => {
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isModalOpen]);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    setIsSubmitted(false);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
   };
 
   return (
@@ -55,11 +85,21 @@ export const BurgerMenu = ({ isOpen, setIsOpen }) => {
             Контакты
           </a>
           <div className={s.buttons}>
-            <button className={s.btn_reg}>Регистрация</button>
-            <button className={s.btn_auth}>Войти</button>
+            <button onClick={openModal} className={s.btn_reg}>Регистрация</button>
+            <a href='https://admin.texflow.online/'>
+              <button className={s.btn_auth}>Войти</button>
+            </a>
           </div>
         </nav>
       </div>
+      <RegisterModal
+          isModalOpen={isModalOpen}
+          closeModal={closeModal}
+          isSubmitted={isSubmitted}
+          handleSubmi={handleSubmit}
+          selectedOption={selectedOption}
+          handleChange={handleChange}
+      />
     </div>
   );
 };

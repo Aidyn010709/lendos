@@ -13,7 +13,7 @@ function App() {
         <Header />
         <Main />
       </div>
-      <div className="sections">
+      <div className="sections container">
         <Automation />
       </div>
       <WhyUs />
