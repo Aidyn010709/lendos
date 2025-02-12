@@ -1,0 +1,195 @@
+.Burger {
+  // position: relative;
+  // background: #000;
+  @media (min-width: 950px) {
+    display: none !important;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    & .logo {
+      display: flex;
+      flex-direction: column;
+
+      & img {
+        width: 90px;
+        margin-bottom: 6px;
+      }
+
+      & p {
+        font-size: 16px;
+        line-height: 14px;
+        letter-spacing: 1px;
+      }
+    }
+
+    & .button {
+      width: 50px;
+      background: transparent;
+      border: none;
+
+      & .ham {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 400ms;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transform: scaleY(0.8) scaleX(1.2);
+      }
+
+      & .burger6.isClosed.hamRotate {
+        transform: rotate(45deg) scale(1.2);
+      }
+
+      & .line {
+        fill: none;
+        transition: 0.4s;
+        stroke: var(--color-white);
+        stroke-width: 3;
+        stroke-linecap: round;
+      }
+
+      & .ham1 .top {
+        stroke-dasharray: 40 139;
+      }
+
+      & .ham1 .bottom {
+        stroke-dasharray: 40 180;
+      }
+
+      & .burger6.isClosed.ham1 .top {
+        stroke-dashoffset: -98px;
+      }
+
+      & .burger6.isClosed.ham1 .bottom {
+        stroke-dashoffset: -138px;
+      }
+    }
+
+    @media (max-width: 960px) {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  & .wrapper {
+    position: fixed;
+    top: 82px;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    // background: rgba(2, 36, 140, 0.75);
+    // backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, width 0.3s ease;
+    overflow: hidden; // Скрываем элементы
+
+    // width: 100%;
+    // max-width: 100vw;
+    // overflow-x: hidden;
+    // position: fixed;
+    // z-index: 1000;
+    // left: 0;
+    // transform: translateX(100%) !important;
+    // top: 80px;
+    // transition: 0.3s ease;
+
+    & nav {
+      // background: #076de079;
+      background: #02284c44;
+      min-height: 100vh;
+      backdrop-filter: blur(12px) !important;
+      display: flex;
+
+      gap: 30px;
+      margin-top: 20px;
+      color: var(--color-white);
+      font-family: var(--font-MailSansRoom-r);
+      font-size: 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center !important;
+
+      & .item {
+        font-size: 24px;
+        margin-top: 20px;
+        // font: 25px var(--font-muller-r);
+        color: var(--color-white);
+        position: relative;
+        // border-bottom: 1px solid #fff;
+
+        &__active {
+          color: var(--color-secondary);
+
+          &::before {
+            width: 100%;
+          }
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 40px;
+          // bottom: -20px;
+          // left: 50%;
+          right: -170px;
+          display: flex;
+          align-items: center;
+          bottom: 0;
+          width: 1200px;
+          height: 2px;
+          text-align: center;
+          background: #ffffff48;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+
+      // @media (max-width: 768px) {
+      //   display: none;
+      // }
+
+      & .btn_reg {
+        font-family: var(--font-MailSansRoom-sm);
+        padding: 10px 112px;
+        color: var(--color-btn-secondary);
+        font-size: 20px;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+
+      & .btn_auth {
+        width: 100%;
+        font-family: var(--font-MailSansRoom-sm);
+        padding: 10px 112px;
+        color: var(--color-btn-secondary);
+        font-size: 20px;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
+  & .active {
+    width: 100vw; // Меню раскрывается
+    transform: translateX(0);
+    // background: #000;
+    // // left: 0;
+    // transform: translateX(0) !important;
+  }
+}

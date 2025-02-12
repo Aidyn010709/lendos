@@ -1,0 +1,26 @@
+@use "./styles/variables/global.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.banner {
+  background-image: url("./shared/assets/img/banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+.sections {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}

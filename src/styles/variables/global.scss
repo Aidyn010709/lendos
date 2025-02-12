@@ -1,0 +1,120 @@
+// ======= Montserrat
+@font-face {
+  font-family: Montserrat-regular;
+  src: url("./shared/assets/fonts/Montserrat/Montserrat-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Monteserrat-medium;
+  src: url("./shared/assets/fonts/Montserrat/Montserrat-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Monteserrat-semibold;
+  src: url("./shared/assets/fonts/Montserrat/Montserrat-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Montserrat-bold;
+  src: url("./shared/assets/fonts/Montserrat/Montserrat-Bold.ttf");
+  font-weight: 700;
+}
+
+// ======= Inter
+
+@font-face {
+  font-family: Inter-regular;
+  src: url("./shared/assets/fonts/Inter/Inter_24pt-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Inter-meduim;
+  src: url("./shared/assets/fonts/Inter/Inter_24pt-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Inter-sm;
+  src: url("./shared/assets/fonts/Inter/Inter_24pt-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Inter-bold;
+  src: url("./shared/assets/fonts/Inter/Inter_24pt-Bold.ttf");
+  font-weight: 700;
+}
+
+// ======= Mail-Sansa-Room
+
+@font-face {
+  font-family: Mail-Sans-Room-regular;
+  src: url("./shared/assets/fonts/Mail-Sans-Room/MailSansRoman-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Mail-Sans-Room-medium;
+  src: url("./shared/assets/fonts/Mail-Sans-Room/MailSansRoman-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Mail-Sans-Room-sm;
+  src: url("./shared/assets/fonts/Mail-Sans-Room/MailSansRoman-DemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Mail-Sans-Room-bold;
+  src: url("./shared/assets/fonts/Mail-Sans-Room/MailSansRoman-Bold.ttf");
+  font-weight: 700;
+}
+
+:root {
+  /* Шрифты */
+  --font-montserrat-r: "Montserrat-regular";
+  --font-montserrat-sb: "Montserrat-semibold";
+  --font-montserrat-b: "Montserrat-bold";
+
+  --font-inter-r: "Inter-regular";
+  --font-inter-sm: "Inter-sm";
+  --font-inter-b: "Inter-bold";
+
+  --font-MailSansRoom-r: "Mail-Sans-Room-regular";
+  --font-MailSansRoom-sm: "Mail-Sans-Room-sm";
+  --font-MailSansRoom-b: "Mail-Sans-Room-bold";
+  --font-MailSansRoom-md: "Mail-Sans-Room-medium";
+
+  /* Размер шрифта для заголовков (L - Large) */
+  --font-size-L: clamp(28px, 3vw, 48px);
+  --font-line-L: clamp(33px, 3vw, 68px);
+  --font-L: var(--font-size-L) / var(--font-line-L) var(--font-montserrat-r);
+
+  /* Размер шрифта для названия карточек (M - Medium) */
+  --font-size-M: clamp(16px, 1vw, 20px);
+  --font-line-M: clamp(14px, 3vw, 29px);
+  --font-M: var(--font-size-M) / var(--font-line-M) var(--font-inter-r);
+
+  /* Размер шрифта для описания (S - Small) */
+  --font-size-S: clamp(14px, 1vw, 18px);
+  --font-line-S: clamp(10px, 2vw, 28px);
+  --font-S: var(--font-size-S) / var(--font-line-S) var(--font-montserrat-r);
+
+  /* Размеры */
+  --container-width: 1280px;
+
+  /* Цвета */
+  --color-black: #0e0e0e;
+  --color-bg-secondary: #0062f5;
+  --color-secondary: #0062f5;
+  --color-white: #fff;
+  --color-title: #060d91;
+  --color-dark-title: #060d91;
+  --color-dark-gray: #d9d9d9;
+  --color-btn-secondary: #0061f2;
+}

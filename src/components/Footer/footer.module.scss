@@ -1,0 +1,102 @@
+.footer {
+  // background: #0062f5;
+  background-image: url("/src/shared/assets/img/gradient.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 600px;
+
+  .contacts_navs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .f_container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding-top: 70px;
+
+    & .f_content {
+      // display: flex;
+      // justify-content: space-between;
+      // align-items: center;
+      flex-wrap: wrap;
+      padding: 14px;
+
+      // @media (max-width: 768px) {
+
+      // }
+
+      & .logo_desc {
+        font-family: var(--font-MailSansRoom-r);
+        color: #ffffffc0;
+        font-family: Mail-Sans-Room-regular;
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 50px;
+
+        img {
+          // width: 200px;
+          margin-bottom: 16px;
+          object-fit: cover;
+        }
+        // span {
+        //   padding-top: 15px;
+        // }
+      }
+      & .contacts {
+        & .contacts_title {
+          color: #ffffffc0;
+          font-family: var(--font-MailSansRoom-r);
+          font-size: 20px;
+        }
+        & .icon_wrap {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-top: 22px;
+          margin-bottom: 16px;
+          font-family: Mail-Sans-Room-medium;
+          font-size: 20px;
+          font-weight: 500;
+          color: #fff;
+          & .icon {
+            background: #fff;
+            padding: 5px;
+            width: 30px;
+            height: 30px;
+
+            color: #0763ee;
+            // z-index: 1;
+            border-radius: 50%;
+            // font-size: 30px;
+            text-align: center;
+          }
+        }
+      }
+
+      & .footer_nav {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        & .nav_title {
+          color: #ffffffc0;
+          font-family: var(--font-MailSansRoom-r);
+          font-size: 20px;
+        }
+
+        & .nav_link {
+          font-family: Mail-Sans-Room-medium;
+          font-size: 20px;
+          font-weight: 500;
+          color: #fff;
+          transition: 0.3s all;
+
+          &:hover {
+            color: #c7c7c7;
+          }
+        }
+      }
+    }
+  }
+}

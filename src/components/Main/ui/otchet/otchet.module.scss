@@ -1,0 +1,105 @@
+.wrapper {
+  font-family: Manrope;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+
+  .mainCard {
+    border-radius: 16px;
+    padding: 20px;
+    background: var(--color-white);
+    transform: rotate(5deg);
+
+    & .zarplata {
+      font-size: 16px;
+      font-weight: 600;
+      padding-bottom: 22px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn {
+    background: var(--color-bg-secondary);
+    font-family: Manrope;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    padding: 14px 23px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .order_card {
+    padding: 14px;
+    background: var(--color-white);
+    border-radius: 14px;
+    transform: rotate(-6deg);
+
+    & .order_icon {
+      padding: 10px;
+      background: #e7e6e6;
+      height: 50px;
+      text-align: center;
+      width: 50px;
+      border-radius: 50%;
+      margin-bottom: 8px;
+    }
+
+    & .status {
+      color: #636363;
+      font-size: 14px;
+      font-weight: 400;
+      padding-top: 10px;
+    }
+
+    h3 {
+      margin-top: 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+
+    // .mainCard,
+    // .order_card {
+    //   flex: 1 1 calc(20% - 10px);
+    // }
+
+    .btn {
+      width: auto;
+    }
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+    gap: 15px;
+
+    .mainCard,
+    .order_card {
+      flex: 1 1 100%;
+      transform: none;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
